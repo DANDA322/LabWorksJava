@@ -73,13 +73,15 @@ public class Lab1 {
         double a = in.nextDouble();
         System.out.print("b = ");
         double b = in.nextDouble();
+        System.out.print("n = ");
+        int n = in.nextInt();
 
-        fibonacciCalc(a,b);
+        fibonacciCalc(a,b,n);
     }
 
-    private void fibonacciCalc(double a, double b){
+    private void fibonacciCalc(double a, double b, int n){
         double[] fibonaciArray = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144};
-        int n = 10, j = fibonaciArray.length - 1;
+        int j = fibonaciArray.length - 1;
         double delta, alpha = 0, fAlpha = 0, beta, fBeta;
         for (int i = 0; i < n; i++, j--) {
             delta = b - a;
@@ -90,7 +92,7 @@ public class Lab1 {
             a = (fAlpha > fBeta) ? alpha : a;
             b = (fAlpha <= fBeta) ? beta : b;
         }
-        System.out.println(String.format("Минимум функции методом Фибоначи в точке (%f;%f)\n", alpha, fAlpha));
+        System.out.printf("Минимум функции методом Фибоначчи в точке (%f;%f)\n%n", alpha, fAlpha);
     }
 
     private void newton(){
